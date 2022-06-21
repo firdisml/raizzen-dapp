@@ -1,0 +1,65 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.active {
+  color: #fff;
+}
+
+.active-icon{
+  color: #fff !important;
+}
+
+.sidebar-items {
+  color: gray;
+  font-size: large;
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .sidebar-items {
+    margin-bottom: 0 !important;
+  }
+}
+
+
+
+.sidebar-items p {
+  margin-left: 1em;
+}
+
+.sidebar-items:hover p{
+  color: #fff;
+}
+
+.sidebar-items:hover svg {
+  color: #fff;
+}
+
+.sidebar-items:not(:last-child){
+  margin-bottom: 1.5em;
+}
+
+@font-face {
+  font-family: "Nuku";
+  src: url("/nuku1.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+h1 {
+  font-family: Nuku, Helvetica, sans-serif;
+}
