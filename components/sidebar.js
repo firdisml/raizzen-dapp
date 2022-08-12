@@ -75,7 +75,7 @@ export default function Sidebar() {
 
   async function connect() {
 
-    if (chainId != 97) {
+    if (chainId != 56) {
 
       networkInit();
 
