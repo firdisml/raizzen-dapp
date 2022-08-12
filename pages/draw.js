@@ -160,7 +160,7 @@ export default function Home() {
 
     } else {
 
-      if (chainId != 97) {
+      if (chainId != 56) {
 
         return (toast({
           title: 'Wrong Network!',

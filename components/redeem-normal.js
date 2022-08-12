@@ -121,7 +121,7 @@ export default function RedeemNormal(props) {
 
     } else {
 
-      if (chainId != 97) {
+      if (chainId != 56) {
 
         setpurchaseIsLoading(false)
 

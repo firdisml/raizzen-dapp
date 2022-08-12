@@ -123,7 +123,7 @@ export default function CollabNormal(props) {
 
     } else {
 
-      if (chainId != 97) {
+      if (chainId != 56) {
 
         setpurchaseIsLoading(false)
 

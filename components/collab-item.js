@@ -126,7 +126,7 @@ export default function CollabItem(props) {
 
     } else {
 
-      if (chainId != 97) {
+      if (chainId != 56) {
 
         setpurchaseIsLoading(false)
 

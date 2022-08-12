@@ -9,7 +9,7 @@ import {
 
 import { IconButton } from '@chakra-ui/react'
 
-import { FiHome, FiGitlab, FiShoppingBag, FiClipboard, FiGift, FiMenu, FiUsers } from "react-icons/fi";
+import { FiHome, FiGitlab, FiShoppingBag,FiAward, FiClipboard, FiGift, FiMenu, FiUsers } from "react-icons/fi";
 
 import { injected } from "./connector";
 import { useWeb3React } from "@web3-react/core";
@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   const networkInit = async () => {
 
-    if (chainId == 97) {
+    if (chainId == 56) {
 
       return toast({
         title: "Network already added",
@@ -126,7 +126,7 @@ export default function Sidebar() {
       }
     };
 
-    if (chainId != 97) {
+    if (chainId != 56) {
 
       networkInit();
       connectWalletOnPageLoad();
@@ -153,7 +153,7 @@ export default function Sidebar() {
     connectWalletOnPageLoad();
 
     if (active) {
-      if (chainId !== 97) {
+      if (chainId !== 56) {
         console.error("Wrong ChainID");
         return toast({
           title: "Wrong network",
@@ -368,6 +368,38 @@ export default function Sidebar() {
                 </Link>
               </Flex>
 
+               {/* Track */}
+
+               <Flex
+                className="sidebar-items"
+                pl={[7, 7, 7, 7, 0]}
+                mt={[0, 0, 0, 0, 0, 3]}
+              >
+                <Link onClick={NavigateOrder} display={["flex", "flex", "flex", "flex", "flex"]}>
+                  <Icon
+                    as={FiAward}
+                    className={router.pathname == "/order" ? "active-icon" : ""}
+                    fontSize={["3xl", "3xl", "3xl", "3xl", "2xl", "3xl"]}
+                  ></Icon>
+                </Link>
+                <Link
+                  onClick={NavigateOrder}
+                  _hover={{ textDecor: "none" }}
+                  display={["none", "none", "none", "none", "flex"]}
+                >
+                  <Text
+                    className={
+                      router.pathname == "/order" ? "active" : ""
+                    }
+                    fontSize={["3xl", "3xl", "3xl", "3xl", "lg", "xl"]}
+                  >
+                    History
+                  </Text>
+                </Link>
+              </Flex>
+
+
+
             </Flex>
           </Flex>
 
@@ -375,12 +407,6 @@ export default function Sidebar() {
         </Flex>
 
         <Flex flexDir="row" alignItems="center" mb={10} mt={10}>
-
-          <IconButton variant='outline'
-            colorScheme='white'
-            aria-label='Send email' onClick={NavigateOrder} p={5} py={6} mr={5} icon={<FiClipboard />} 
-          />
-
           <Button
             leftIcon={<FiGitlab />}
             colorScheme="white"

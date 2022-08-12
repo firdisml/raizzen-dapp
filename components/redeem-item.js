@@ -131,7 +131,7 @@ export default function MerchItem(props) {
 
     } else {
 
-      if (chainId != 97) {
+      if (chainId != 56) {
 
         setpurchaseIsLoading(false)
 
