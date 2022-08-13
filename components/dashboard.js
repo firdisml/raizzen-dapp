@@ -401,7 +401,7 @@ export default function Dashboard() {
                 <Divider />
               </Flex>
               <Text fontSize="lg" color="#fff" fontWeight="bold">
-                {active ? parseFloat((conv.convertWei(totalBalance.toString(), 'ether'))).toFixed(2) : '0.00'}
+                {active ? parseFloat((conv.convertWei(totalBalance.toString(), 'ether'))).toFixed(0) : '0.00'} {process.env.NEXT_PUBLIC_MAIN_CURRENCY}
               </Text>
             </Flex>
           </GridItem>
@@ -438,7 +438,7 @@ export default function Dashboard() {
               </Flex>
               <Text fontSize="lg" color="#fff" fontWeight="bold">
 
-                {active ? parseFloat(conv.convertWei(String(((((sec - totalStake.time_stake) / 3600) * totalStake.total_amount) / 1000)), 'ether')).toFixed(2) : '0.00'}
+                {active ? parseFloat(conv.convertWei(String(((((sec - totalStake.time_stake) / 3600) * totalStake.total_amount) / 1000)), 'ether')).toFixed(0) : '0.00'} {process.env.NEXT_PUBLIC_MAIN_CURRENCY}
 
               </Text>
             </Flex>
@@ -475,7 +475,7 @@ export default function Dashboard() {
                 <Divider />
               </Flex>
               <Text fontSize="lg" color="#fff" fontWeight="bold">
-                {active ? parseFloat((conv.convertWei(String(totalStake.total_amount), 'ether'))).toFixed(2) : '0.00'}
+                {active ? parseFloat((conv.convertWei(String(totalStake.total_amount), 'ether'))).toFixed(0) : '0.00'} {process.env.NEXT_PUBLIC_MAIN_CURRENCY}
               </Text>
             </Flex>
           </GridItem>
@@ -549,7 +549,7 @@ export default function Dashboard() {
                   color="#fff"
                   alignSelf="center"
                 >
-                  <Text>{active ? parseFloat((conv.convertWei(String(totalVault), 'ether'))).toFixed(2) : '0.00'}</Text>
+                  <Text>{active ? parseFloat((conv.convertWei(String(totalVault), 'ether'))).toFixed(0) : '0.00'} {process.env.NEXT_PUBLIC_MAIN_CURRENCY}</Text>
                 </StatNumber>
               </Flex>
             </Stat>
@@ -588,7 +588,7 @@ export default function Dashboard() {
                   color="#fff"
                   alignSelf="center"
                 >
-                  <Text>{active ? parseFloat((conv.convertWei(String(totalCollab), 'ether'))).toFixed(2) : '0.00'}</Text>
+                  <Text>{active ? parseFloat((conv.convertWei(String(totalCollab), 'ether'))).toFixed(0) : '0.00'} {process.env.NEXT_PUBLIC_BRIDGE_CURRENCY}</Text>
                 </StatNumber>
               </Flex>
             </Stat>

@@ -176,7 +176,7 @@ export default function Collab() {
                         color="#fff"
                         alignSelf="center"
                       >
-                        <Text>500,000,000</Text>
+                        <Text>1,000,000,000</Text>
                       </StatNumber>
                     </Flex>
                   </Stat>
@@ -216,7 +216,7 @@ export default function Collab() {
                         flexDir="row"
                       >
                         <Flex>
-                          <Link href={`https://bscscan.com/address/${process.env.NEXT_PUBLIC_BRIDGE_CONTRACT}`}> 0x63...27a0</Link>
+                          <Link href={`https://bscscan.com/address/${process.env.NEXT_PUBLIC_BRIDGE_CONTRACT}`}>0x29...3D20</Link>
 
                         </Flex>
                       </StatNumber>

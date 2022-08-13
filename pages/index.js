@@ -198,7 +198,7 @@ export default function Home() {
                         flexDir="row"
                       >
                         <Flex>
-                          <Link href={`https://bscscan.com/address/${process.env.NEXT_PUBLIC_MAIN_CONTRACT}`}> 0x63...27a0</Link>
+                          <Link href={`https://bscscan.com/address/${process.env.NEXT_PUBLIC_MAIN_CONTRACT}`}>0xe7...18B6</Link>
                         </Flex>
                       </StatNumber>
                     </Flex>
