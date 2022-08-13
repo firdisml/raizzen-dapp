@@ -261,8 +261,8 @@ export default function Home() {
           <TabPanel>
             <AspectRatio maxW='100%' ratio={16 / 9}>
               <iframe
-                title='naruto'
-                src='https://www.youtube.com/embed/S6YKd8k18oY'
+                title='Promo Video'
+                src={process.env.NEXT_PUBLIC_HOME_VIDEO}
                 allowFullScreen
               />
             </AspectRatio>
