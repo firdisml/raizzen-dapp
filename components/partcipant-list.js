@@ -42,7 +42,7 @@ const ParticipantList = (props) => {
                     </Flex>
                 </Link></Td>
 
-            <Td>1000 RZN</Td>
+            <Td>{props.fee} {process.env.NEXT_PUBLIC_MAIN_CURRENCY}</Td>
 
         </Tr>
 

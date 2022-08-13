@@ -59,6 +59,7 @@ export default function Home() {
   const { value } = useContext(AppContext)
   const [totalBalance, setTotalBalance] = value;
   const [totalPrize, setTotalPrize] = useState(0);
+  const [totalFee, setTotalFee] = useState(0);
   const [totalParticipants, setTotalParticipants] = useState([]);
   const [totalDrawID, settotalDrawID] = useState(0);
   const [previousWinner, setPreviousWinner] = useState()
@@ -90,12 +91,13 @@ export default function Home() {
         const web3Provider = new ethers.providers.Web3Provider(connection);
         const signer = web3Provider.getSigner();
         const contract = new ethers.Contract(
-          "0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0",
+          process.env.NEXT_PUBLIC_MAIN_CONTRACT,
           ABI,
           signer
         );
 
         setTotalPrize((await contract.getPrize()).toString());
+        setTotalFee((await contract.getRequirement()).toString());
         setTotalParticipants((await contract.getParticipants()));
         settotalDrawID(await contract.getdrawID() - 1);
 
@@ -124,7 +126,7 @@ export default function Home() {
         const web3Provider = new ethers.providers.Web3Provider(connection);
         const signer = web3Provider.getSigner();
         const contract = new ethers.Contract(
-          "0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0",
+          process.env.NEXT_PUBLIC_MAIN_CONTRACT,
           ABI,
           signer
         );
@@ -160,7 +162,7 @@ export default function Home() {
 
     } else {
 
-      if (chainId != 56) {
+      if (chainId != process.env.NEXT_PUBLIC_CHAIN_ID) {
 
         return (toast({
           title: 'Wrong Network!',
@@ -201,7 +203,7 @@ export default function Home() {
               const web3Provider = new ethers.providers.Web3Provider(connection);
               const signer = web3Provider.getSigner();
               const contract = new ethers.Contract(
-                "0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0",
+                process.env.NEXT_PUBLIC_MAIN_CONTRACT,
                 ABI,
                 signer
               );
@@ -300,7 +302,7 @@ export default function Home() {
                         color="#fff"
                         alignSelf="center"
                       >
-                        <Text>{conv.convertWei(String(totalPrize), "ether")}</Text>
+                        <Text>{conv.convertWei(String(totalPrize), "ether")} {process.env.NEXT_PUBLIC_MAIN_CURRENCY}</Text>
                       </StatNumber>
                     </Flex>
                   </Stat>
@@ -480,7 +482,7 @@ export default function Home() {
                     {totalParticipants.map((item) => (
                       <ParticipantList
                         address={item}
-                        hash={item}
+                        fee={conv.convertWei(String(totalFee), "ether")}
                       />
                     ))}
                     {display == "show" && <></>}

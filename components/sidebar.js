@@ -23,7 +23,7 @@ export default function Sidebar() {
 
   const networkInit = async () => {
 
-    if (chainId == 56) {
+    if (chainId == process.env.NEXT_PUBLIC_CHAIN_ID) {
 
       return toast({
         title: "Network already added",
@@ -75,7 +75,7 @@ export default function Sidebar() {
 
   async function connect() {
 
-    if (chainId != 56) {
+    if (chainId != process.env.NEXT_PUBLIC_CHAIN_ID) {
 
       networkInit();
 
@@ -126,7 +126,7 @@ export default function Sidebar() {
       }
     };
 
-    if (chainId != 56) {
+    if (chainId != process.env.NEXT_PUBLIC_CHAIN_ID) {
 
       networkInit();
       connectWalletOnPageLoad();
@@ -153,7 +153,7 @@ export default function Sidebar() {
     connectWalletOnPageLoad();
 
     if (active) {
-      if (chainId !== 56) {
+      if (chainId != process.env.NEXT_PUBLIC_CHAIN_ID) {
         console.error("Wrong ChainID");
         return toast({
           title: "Wrong network",

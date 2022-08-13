@@ -216,7 +216,7 @@ export default function Collab() {
                         flexDir="row"
                       >
                         <Flex>
-                          <Link href="https://bscscan.com/address/0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0"> 0x63...27a0</Link>
+                          <Link href={`https://bscscan.com/address/${process.env.NEXT_PUBLIC_BRIDGE_CONTRACT}`}> 0x63...27a0</Link>
 
                         </Flex>
                       </StatNumber>

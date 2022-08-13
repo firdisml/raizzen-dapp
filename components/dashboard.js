@@ -91,7 +91,7 @@ export default function Dashboard() {
         const web3Provider = new ethers.providers.Web3Provider(connection);
         const signer = web3Provider.getSigner();
         const contract = new ethers.Contract(
-          "0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0",
+          process.env.NEXT_PUBLIC_MAIN_CONTRACT,
           ABI,
           signer
         );
@@ -115,7 +115,7 @@ export default function Dashboard() {
         const web3Provider = new ethers.providers.Web3Provider(connection);
         const signer = web3Provider.getSigner();
         const contract = new ethers.Contract(
-          "0xC8549792BBE6ae09A350B078f00155810bDBbfBC",
+          process.env.NEXT_PUBLIC_BRIDGE_CONTRACT,
           ABI,
           signer
         );
@@ -151,7 +151,7 @@ export default function Dashboard() {
 
     } else {
 
-      if (chainId != 56) {
+      if (chainId != process.env.NEXT_PUBLIC_CHAIN_ID) {
 
         return (toast({
           title: 'Wrong Network',
@@ -181,7 +181,7 @@ export default function Dashboard() {
             const web3Provider = new ethers.providers.Web3Provider(connection);
             const signer = web3Provider.getSigner();
             const contract = new ethers.Contract(
-              "0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0",
+              process.env.NEXT_PUBLIC_MAIN_CONTRACT,
               ABI,
               signer
             );
@@ -270,7 +270,7 @@ export default function Dashboard() {
 
     } else {
 
-      if (chainId != 56) {
+      if (chainId != process.env.NEXT_PUBLIC_CHAIN_ID) {
         return (toast({
           title: 'Wrong Network',
           status: 'error',
@@ -311,7 +311,7 @@ export default function Dashboard() {
               const web3Provider = new ethers.providers.Web3Provider(connection);
               const signer = web3Provider.getSigner();
               const contract = new ethers.Contract(
-                "0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0",
+                process.env.NEXT_PUBLIC_MAIN_CONTRACT,
                 ABI,
                 signer
               );
@@ -580,7 +580,7 @@ export default function Dashboard() {
                 fontWeight="bold"
                 pb="5px"
               >
-                <Text>Collab Token Balance</Text>
+                <Text>Bridge Token Balance</Text>
               </StatLabel>
               <Flex>
                 <StatNumber
