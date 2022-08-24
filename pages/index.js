@@ -55,7 +55,7 @@ export default function Home() {
     const requestBSC = async () => {
       try {
         const resp = await axios.get(
-          `https://api.bscscan.com/api?module=account&action=txlist&address=0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=4KMHW8EZ1WJYP18XNB6M59HUKWMIXT5GF9`
+          `https://api.bscscan.com/api?module=account&action=txlist&address=${process.env.NEXT_PUBLIC_MAIN_CONTRACT}&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=4KMHW8EZ1WJYP18XNB6M59HUKWMIXT5GF9`
         );
 
         setItems(resp.data.result);
@@ -261,7 +261,7 @@ export default function Home() {
           <TabPanel>
             <AspectRatio maxW='100%' ratio={16 / 9}>
               <iframe
-                title='Promo Video'
+                title='Video'
                 src={process.env.NEXT_PUBLIC_HOME_VIDEO}
                 allowFullScreen
               />
