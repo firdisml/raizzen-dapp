@@ -138,7 +138,7 @@ export default function ComicItem(props) {
                   variant='solid'
                   colorScheme='yellow'
                 >
-                  <TagLabel>Processing</TagLabel>
+                  <TagLabel>Queeing</TagLabel>
                 </Tag>)}
 
               </chakra.span>
