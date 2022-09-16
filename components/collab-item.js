@@ -65,6 +65,7 @@ export default function CollabItem(props) {
 
 
 
+
   const formik = useFormik({
 
     initialValues: {
@@ -92,6 +93,8 @@ export default function CollabItem(props) {
         price: conv.convertWei(props.price, 'ether'),
         address: "https://app.pentas.io/user/" + account,
         status: false,
+        picture:props.picture,
+        date:props.date
 
       })
 

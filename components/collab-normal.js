@@ -59,8 +59,6 @@ export default function CollabNormal(props) {
   const [purchaseIsloading, setpurchaseIsLoading] = useState(false);
   const { chainId, active, account } = useWeb3React();
   const toast = useToast()
-  var today = new Date();
-  var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
   const formik = useFormik({
 
@@ -88,7 +86,8 @@ export default function CollabNormal(props) {
         price: conv.convertWei(props.price, 'ether'),
         address: "https://app.pentas.io/user/" + account,
         status: false,
-        date: date
+        picture:props.picture,
+        date: props.date
 
       })
 

@@ -26,6 +26,8 @@ export default function Redeem() {
   //Variable Declare
   const [receivedData, setReceivedData] = useState([]);
   const [normal, setNormal] = useState([]);
+  var today = new Date();
+  var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
   //Page load
   useEffect(() => {
@@ -83,14 +85,14 @@ export default function Redeem() {
           <TabPanel>
             {receivedData.length != 0 ? <div><Grid templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)"]} gap={[3, 6, 6, 6, 6]}>
 
-              {receivedData.map((data) => <RedeemItem name={data.name} price={data.price} art_contract={data.art_contract} id={data.id} art_id={data.art_id} picture={data.picture} type={data.type} />)}
+              {receivedData.map((data) => <RedeemItem name={data.name} price={data.price} art_contract={data.art_contract} id={data.id} art_id={data.art_id} picture={data.picture} type={data.type} date={date}/>)}
 
             </Grid></div> : <Center><Spinner thickness='4px' size='lg' alignItems={'center'} /></Center>}
           </TabPanel>
           <TabPanel>
             {receivedData.length != 0 ? <div><Grid templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)"]} gap={[3, 6, 6, 6, 6]}>
 
-              {normal.map((data) => <RedeemNormal name={data.name} price={data.price} id={data.id} picture={data.picture} type={data.type} />)}
+              {normal.map((data) => <RedeemNormal name={data.name} price={data.price} id={data.id} picture={data.picture} type={data.type} date={date}/>)}
 
             </Grid></div> : <Center><Spinner thickness='4px' size='lg' alignItems={'center'} /></Center>}
           </TabPanel>

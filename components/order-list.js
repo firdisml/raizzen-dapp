@@ -92,7 +92,7 @@ export default function ComicItem(props) {
             bgPos="center"
             style={{
               backgroundImage:
-                "url(https://cdn.discordapp.com/attachments/947785554706198568/959569436623384576/Capture.png)",
+              `url('${props.picture}')`
             }}
           ></Box>
 
@@ -189,20 +189,20 @@ export default function ComicItem(props) {
                       >
                         <Box
                           w={2 / 3}
-                          bgSize="contain"
+                          bgSize="cover"
                           style={{
                             backgroundImage:
-                              "url('https://cdn.discordapp.com/attachments/947785554706198568/959569436623384576/Capture.png')",
+                            `url('${props.picture}')`
                           }}
                         ></Box>
 
                         <Box w={2 / 3} p={{ base: 4, md: 4 }}>
-                          <Heading
-                            fontSize="2xl"
+                        <Heading
+                            fontSize={['sm', 'sm', 'sm', 'sm', 'lg']}
                             fontWeight="bold"
                             color={useColorModeValue("gray.800", "white")}
                           >
-                            Product
+                            {props.name}
                           </Heading>
 
                           <Badge colorScheme='green'>Physical Item</Badge>

@@ -45,6 +45,7 @@ import { useWeb3React } from "@web3-react/core";
 
 
 
+
 export default function RedeemNormal(props) {
 
   initFirebase()
@@ -87,6 +88,8 @@ export default function RedeemNormal(props) {
         price: conv.convertWei(props.price, 'ether'),
         address: "https://app.pentas.io/user/" + account,
         status: false,
+        picture:props.picture,
+        date: props.date
 
       })
 
@@ -313,7 +316,7 @@ export default function RedeemNormal(props) {
                       >
                         <Box
                           w={2 / 3}
-                          bgSize="contain"
+                          bgSize="cover"
                           style={{
                             backgroundImage:
                               `url('${props.picture}')`
