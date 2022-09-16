@@ -97,6 +97,7 @@ export default function MerchItem(props) {
         price: conv.convertWei(props.price, 'ether'),
         address: "https://app.pentas.io/user/" + account,
         status: false,
+        ended:false,
         picture:props.picture,
         date:props.date
 
