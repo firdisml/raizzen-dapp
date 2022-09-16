@@ -26,7 +26,7 @@ function Order() {
             events.get().then((querySnapshot) => {
                 const tempDoc = []
                 querySnapshot.forEach((doc) => {
-                    tempDoc.push({ name: doc.data().name, twitter: doc.data().twitter, discord: doc.data().discord, price: doc.data().price, status: doc.data().status, date: doc.data().date, picture: doc.data().picture })
+                    tempDoc.push({ name: doc.data().name, twitter: doc.data().twitter, discord: doc.data().discord, price: doc.data().price, status: doc.data().status, date: doc.data().date, picture: doc.data().picture, ended:doc.data().ended})
                 })
                 setReceivedData(tempDoc)
             })
@@ -46,7 +46,7 @@ function Order() {
 
                 <Grid templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)", "repeat(2, 1fr)"]} gap={[3, 6, 6, 6, 6]}>
 
-                    {receivedData.map((data) => <OrderItem status={data.status} name={data.name} price={data.price} twitter={data.twitter} discord={data.discord} date={data.date} picture={data.picture}/>)}
+                    {receivedData.map((data) => <OrderItem status={data.status} name={data.name} price={data.price} twitter={data.twitter} discord={data.discord} date={data.date} picture={data.picture} ended={data.ended}/>)}
 
                 </Grid>
             </div> :

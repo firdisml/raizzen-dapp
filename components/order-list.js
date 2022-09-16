@@ -46,11 +46,13 @@ export default function ComicItem(props) {
   const finalRef = useRef()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [isComplete, setIsComplete] = useState();
+  const [isEnded, setIsEnded] = useState();
 
 
   useEffect(() => {
 
     setIsComplete(props.status);
+    setIsEnded(props.ended)
 
   }, [])
 
@@ -92,7 +94,7 @@ export default function ComicItem(props) {
             bgPos="center"
             style={{
               backgroundImage:
-              `url('${props.picture}')`
+                `url('${props.picture}')`
             }}
           ></Box>
 
@@ -132,6 +134,13 @@ export default function ComicItem(props) {
                   colorScheme='green'
                 >
                   <TagLabel>Completed</TagLabel>
+                </Tag>) : isEnded ? (<Tag
+                  size={'lg'}
+                  borderRadius='full'
+                  variant='solid'
+                  colorScheme='gray'
+                >
+                  <TagLabel>Not Picked</TagLabel>
                 </Tag>) : (<Tag
                   size={'lg'}
                   borderRadius='full'
@@ -192,12 +201,12 @@ export default function ComicItem(props) {
                           bgSize="cover"
                           style={{
                             backgroundImage:
-                            `url('${props.picture}')`
+                              `url('${props.picture}')`
                           }}
                         ></Box>
 
                         <Box w={2 / 3} p={{ base: 4, md: 4 }}>
-                        <Heading
+                          <Heading
                             fontSize={['sm', 'sm', 'sm', 'sm', 'lg']}
                             fontWeight="bold"
                             color={useColorModeValue("gray.800", "white")}
@@ -265,13 +274,20 @@ export default function ComicItem(props) {
                           colorScheme='green'
                         >
                           <TagLabel>Completed</TagLabel>
+                        </Tag>) : isEnded ? (<Tag
+                          size={'lg'}
+                          borderRadius='full'
+                          variant='solid'
+                          colorScheme='gray'
+                        >
+                          <TagLabel>Not Picked</TagLabel>
                         </Tag>) : (<Tag
                           size={'lg'}
                           borderRadius='full'
                           variant='solid'
                           colorScheme='yellow'
                         >
-                          <TagLabel>Processing</TagLabel>
+                          <TagLabel>Queeing</TagLabel>
                         </Tag>)}
                       </FormControl>
 
@@ -291,3 +307,4 @@ export default function ComicItem(props) {
     </>
   );
 }
+
