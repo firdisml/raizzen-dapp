@@ -38,6 +38,7 @@ import { GrAddCircle } from "react-icons/gr";
 import IconBox from "./iconbox";
 import { useEffect, useState, useContext } from "react";
 import { useWeb3React } from "@web3-react/core";
+import { injected } from "./connector";
 import ABI from "../contract/ABI.json";
 import { useDisclosure } from '@chakra-ui/react'
 import { ethers } from "ethers";
@@ -50,7 +51,8 @@ const conv = require('cryptounit-converter')
 export default function Dashboard() {
 
 
-  const tokenAddress = '0xe7b3EEe3eED7DEfed3697952e2dCA69FE46f18B6';
+
+  const tokenAddress = '0xe7b3EEe3eED7DEfed3697952e2dCA69FE46f18B6b';
   const tokenSymbol = 'RZN';
   const tokenDecimals = 18;
   const tokenImage = 'https://i.imgur.com/JmkS8ri.png';
@@ -59,7 +61,7 @@ export default function Dashboard() {
   const [totalBalance, setTotalBalance] = value;
   const [totalCollab, setTotalCollab] = collab;
   const [totalVault, setTotalVault] = useState(0);
-  const { chainId, active, account } = useWeb3React();
+  const { chainId, active, account, activate } = useWeb3React();
   const [stakeIsloading, setStakeIsLoading] = useState(false);
   const [withdrawIsloading, setwithdrawIsLoading] = useState(false);
   const [totalStake, setTotalStake] = useState({});
