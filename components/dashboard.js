@@ -52,7 +52,7 @@ export default function Dashboard() {
 
 
 
-  const tokenAddress = '0xe7b3EEe3eED7DEfed3697952e2dCA69FE46f18B6b';
+  const tokenAddress = '0xe7b3EEe3eED7DEfed3697952e2dCA69FE46f18B6';
   const tokenSymbol = 'RZN';
   const tokenDecimals = 18;
   const tokenImage = 'https://i.imgur.com/JmkS8ri.png';
