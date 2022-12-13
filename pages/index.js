@@ -306,7 +306,7 @@ export default function Home() {
               <Flex align="center" mt={[2, 2, 2, 2, 2]} mb={[4, 4, 4, 4, 0]}>
                 <Divider />
 
-                <Link href={"https://bscscan.com/address/0x63E9Ab50C69857DDCeaBab6e608aDD90D64e27a0"}><IconButton
+                <Link href={"https://bscscan.com/address/0xe7b3EEe3eED7DEfed3697952e2dCA69FE46f18B6"}><IconButton
                   variant='outline'
                   colorScheme='white'
                   aria-label='Call Sage'
